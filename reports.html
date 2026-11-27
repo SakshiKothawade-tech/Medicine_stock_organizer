@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Inventory Reports</h1>
+
+<div class="card blue-card">
+
+    <p>Total Stock Value</p>
+
+    <h1>₹{{ total_value }}</h1>
+
+</div>
+
+
+<div class="box">
+
+<h2>Category Report</h2>
+
+<table>
+
+    <tr>
+        <th>Category</th>
+        <th>Medicines</th>
+        <th>Stock</th>
+        <th>Value</th>
+    </tr>
+
+    {% for r in reports %}
+
+    <tr>
+
+        <td>{{ r.category }}</td>
+
+        <td>{{ r.total }}</td>
+
+        <td>{{ r.stock }}</td>
+
+        <td>₹{{ r.value }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="welcome">
+    <h1>Supplier Overview</h1>
+    <p class="subtitle">Manage and view your medicine suppliers.</p>
+</div>
+
+<div class="box">
+    <table>
+        <thead>
+            <tr>
+                <th>Supplier Name</th>
+                <th>Medicine Count</th>
+                <th>Total Stock</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for s in suppliers %}
+            <tr>
+                <td>{{ s.supplier }}</td>
+                <td>{{ s.medicines }}</td>
+                <td>{{ s.total_stock }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="3">No suppliers found. Please add a medicine first.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

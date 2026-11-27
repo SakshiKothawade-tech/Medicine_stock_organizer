@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="welcome">
+    <h1>Dashboard Overview</h1>
+    <p class="subtitle">
+        Welcome to your Medicine Stock Organizer.
+        Manage your medicine inventory easily.
+    </p>
+</div>
+
+<div class="cards">
+
+    <div class="card blue-card">
+        <div class="card-icon">💊</div>
+        <p>Total Medicines</p>
+        <h1>{{ stats.total }}</h1>
+        <span>Registered medicines</span>
+    </div>
+
+    <div class="card green-card">
+        <div class="card-icon">📦</div>
+        <p>Total Units</p>
+        <h1>{{ stats.units }}</h1>
+        <span>Available stock units</span>
+    </div>
+
+    <div class="card orange-card">
+        <div class="card-icon">⚠️</div>
+        <p>Low Stock</p>
+        <h1>{{ stats.low_stock }}</h1>
+        <span>Medicines need restocking</span>
+    </div>
+
+    <div class="card red-card">
+        <div class="card-icon">🚫</div>
+        <p>Expired Medicines</p>
+        <h1>{{ stats.expired }}</h1>
+        <span>Expired stock items</span>
+    </div>
+
+    <div class="card purple-card">
+        <div class="card-icon">📅</div>
+        <p>Near Expiry</p>
+        <h1>{{ stats.near_expiry }}</h1>
+        <span>Check expiry dates</span>
+    </div>
+
+</div>
+
+{% endblock %}
